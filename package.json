@@ -2,6 +2,7 @@
   "dependencies": {
     "cloudinary": "^2.7.0",
     "cors": "^2.8.5",
+    "dotenv": "^17.2.1",
     "express": "^5.1.0",
     "multer": "^2.0.2",
     "multer-storage-cloudinary": "^4.0.0",
@@ -9,6 +10,7 @@
     "nodemon": "^3.1.10"
   },
   "scripts": {
-    "start": "nodemon backup.js"
+    "start": "node backup.js",
+    "dev": "nodemon backup.js"
   }
 }

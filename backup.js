@@ -4,6 +4,7 @@ const multer = require("multer");
 const path = require("path");
 const cors = require("cors");
 const fs = require("fs");
+require('dotenv').config();
 const NGROK_URL = "https://86135aef7d4a.ngrok-free.app/" || "http://localhost:5000";
 const app = express();
 app.use(cors());
@@ -14,10 +15,10 @@ app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // ✅ Database connection
 const db = mysql.createPool({
-  host: "localhost",
-  user: "root",
-  password: "1234",
-  database: "simple_store"
+  host: process.env.DB_HOST,
+  user: process.env.DB_USER,
+  password: process.env.DB_PASSWORD,
+  database: process.env.DB_NAME
 });
 
 // ✅ Multer setup for file uploads

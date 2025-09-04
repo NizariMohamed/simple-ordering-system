@@ -622,13 +622,13 @@ function openPreview(productIndex) {
       </div>`;
     galleryHTML = galleryImages.slice(1).map(img => `
       <div class="overflow-hidden rounded-xl mb-2">
-        <img src="http://localhost:5000${img}" class="w-full h-40 object-cover cursor-zoom-in" onclick="zoomImage(this)">
+        <img src="https://neez-ordering-system.onrender.com${img}" class="w-full h-40 object-cover cursor-zoom-in" onclick="zoomImage(this)">
       </div>
     `).join('');
   } else {
     mainImageHTML = `
       <div class="preview-image overflow-hidden rounded-xl mb-4">
-        <img src="http://localhost:5000${product.image}" 
+        <img src="https://neez-ordering-system.onrender.com${product.image}" 
              class="w-full h-64 md:h-80 object-cover cursor-zoom-in" 
              onclick="zoomImage(this)"
              alt="${product.name}">

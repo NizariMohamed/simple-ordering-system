@@ -584,13 +584,18 @@ function displayProducts(products) {
         <p class="product-description text-sm leading-relaxed">${p.description}</p>
         ${priceHTML}
         <p class="text-sm text-gray-400">${p.stock} in stock | Category: ${p.category || "N/A"}</p>
+
         <div class="flex space-x-3">
           <button onclick="openPreview(${allProducts.indexOf(p)})" class="preview-btn flex-1 py-2 px-4 rounded-xl font-semibold text-sm">
             👁️ Preview
           </button>
-          <button onclick="orderOnWhatsApp('${p.name}', '${p.price}')"
-            class="whatsapp-btn flex-1 py-2 px-4 rounded-xl font-semibold text-sm">
-            📱 Order
+          <button onclick="addToCart(${allProducts.indexOf(p)})" class="preview-btn flex-1 py-2 px-4 rounded-xl font-semibold text-sm">
+            🛒 Add to Cart
+          </button>
+        </div>
+        <div class="mt-2">
+          <button onclick="orderOnWhatsApp('${p.name}', '${p.price}')" class="whatsapp-btn w-full py-2 px-4 rounded-xl font-semibold text-sm">
+            📱 Order Now
           </button>
         </div>
       </div>
@@ -1089,7 +1094,8 @@ function clearSearch() {
 }
 
 loadProducts();
-</script>
 
+</script>
+<script src="cart.js"></script>
 </body>
 </html>

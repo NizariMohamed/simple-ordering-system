@@ -1767,7 +1767,7 @@
           ${p.discount ? `<span class="absolute top-4 right-4 bg-gradient-to-r from-red-500 to-pink-500 text-white text-sm font-bold px-3 py-2 rounded-full badge z-10">-${p.discount}%</span>` : ""}
           
           <div class="relative mb-4 overflow-hidden rounded-xl">
-            <img src="http://localhost:5000${p.gallery ? JSON.parse(p.gallery)[0] : p.image}" 
+            <img src="https://neez-ordering-system.onrender.com${p.gallery ? JSON.parse(p.gallery)[0] : p.image}" 
                  class="w-full h-48 object-cover transition-transform duration-500 hover:scale-110" 
                  alt="${p.name}" loading="lazy">
             <div class="absolute inset-0 bg-gradient-to-t from-black/20 to-transparent"></div>
@@ -1836,7 +1836,7 @@
                    data-product-id="${p.id}" ${selectedProducts.has(p.id) ? 'checked' : ''}>
           </td>
           <td class="p-4">
-            <img src="http://localhost:5000${p.gallery ? JSON.parse(p.gallery)[0] : p.image}" 
+            <img src="https://neez-ordering-system.onrender.com${p.gallery ? JSON.parse(p.gallery)[0] : p.image}" 
                  class="w-16 h-16 object-cover rounded-lg" alt="${p.name}">
           </td>
           <td class="p-4">

@@ -547,7 +547,7 @@ let allProducts = [];
 let filteredProducts = [];
 
 async function loadProducts() {
-  const res = await fetch("http://localhost:5000/api/products");
+  const res = await fetch("https://neez-ordering-system.onrender.com/api/products");
   const products = await res.json();
   allProducts = products;
   filteredProducts = products;
@@ -576,7 +576,7 @@ function displayProducts(products) {
     return `
     <div class="product-card p-6 rounded-2xl shadow-lg overflow-hidden">
       <div class="product-image overflow-hidden rounded-xl mb-4 cursor-pointer" onclick="openPreview(${allProducts.indexOf(p)})">
-        <img src="http://localhost:5000${p.gallery ? JSON.parse(p.gallery)[0] : p.image}" class="w-full h-48 object-cover">
+        <img src="https://neez-ordering-system.onrender.com${p.gallery ? JSON.parse(p.gallery)[0] : p.image}" class="w-full h-48 object-cover">
         <div class="image-overlay"></div>
       </div>
       <div class="space-y-3">
@@ -615,7 +615,7 @@ function openPreview(productIndex) {
     const galleryImages = JSON.parse(product.gallery);
     mainImageHTML = `
       <div class="preview-image overflow-hidden rounded-xl mb-4">
-        <img src="http://localhost:5000${galleryImages[0]}" 
+        <img src="https://neez-ordering-system.onrender.com${galleryImages[0]}" 
              class="w-full h-64 md:h-80 object-cover cursor-zoom-in" 
              onclick="zoomImage(this)"
              alt="${product.name}">
@@ -862,7 +862,7 @@ function sendToWhatsApp(name, price) {
     }
 
     // Update stock in database
-    fetch(`http://localhost:5000/api/orders`, {
+    fetch(`https://neez-ordering-system.onrender.com/api/orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'
@@ -920,7 +920,7 @@ function sendToWhatsAppWithQuantity(name, price, quantity) {
     }
 
     // Update stock in database by creating an order
-    fetch(`http://localhost:5000/api/orders`, {
+    fetch(`https://neez-ordering-system.onrender.com/api/orders`, {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json'

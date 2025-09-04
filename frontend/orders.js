@@ -1,4 +1,4 @@
-const ORDERS_API_URL = "http://localhost:5000/api/orders";
+const ORDERS_API_URL = "https://neez-ordering-system.onrender.com/api/orders";
 
 async function loadOrders() {
   try {
